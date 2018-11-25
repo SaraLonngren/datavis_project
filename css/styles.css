@@ -1,0 +1,33 @@
+.background-cor{
+	background-color: #000080;
+}
+.brand-logo{
+	margin-left: 25px;
+}
+
+#barchartContainer {
+      width: 900px;
+      height: 400px;
+      margin-bottom: 100px;
+}
+
+#barchart {
+      position: absolute;
+}
+
+#linechartContainer {
+      width: 900px;
+      height: 400px;
+      margin-bottom: 25px;
+}
+
+#histogramContainer {
+      width: 900px;
+      height: 400px;
+      margin-bottom: 40px;
+}
+
+#mapid {
+    width: 800px;
+    height: 600px;
+}
