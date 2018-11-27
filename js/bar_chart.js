@@ -36,10 +36,10 @@
         var sortByCategory = filteredData.sort(function (a, b) { return a.category < b.category; });
         var names = sortByCategory.map(function (d) { return d.category; });
 
-        let _bbox = barChart.root().node().parentNode.getBoundingClientRect();
+        let _sizeBarChart = barChart.root().node().parentNode.getBoundingClientRect();
 
-        barChart.width(_bbox.width)
-                 .height(_bbox.height)
+        barChart.width(_sizeBarChart.width)
+                 .height(_sizeBarChart.height)
                  .margins({top: 50, right: 50, bottom: 50, left: 50})
                  .dimension(categoryDim)
                  .x(d3.scaleBand().domain(names.slice(0, numberBars)))

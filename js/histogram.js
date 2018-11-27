@@ -1,12 +1,12 @@
     var opts = {
-      lines: 9, // The number of lines to draw
-      length: 9, // The length of each line
-      width: 5, // The line thickness
-      radius: 20, // The radius of the inner circle
-      color: '#EE3124', // #rgb or #rrggbb or array of colors
-      speed: 1.9, // Rounds per second
-      trail: 40, // Afterglow percentage
-      className: 'spinner', // The CSS class to assign to the spinner
+      lines: 9,
+      length: 9,
+      width: 5,
+      radius: 20,
+      color: '#EE3124',
+      speed: 1.9,
+      trail: 40,
+      className: 'spinner',
     };
 
     var target = document.getElementById('histogram');

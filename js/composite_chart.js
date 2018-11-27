@@ -53,6 +53,7 @@
                      .renderHorizontalGridLines(true)
                      .legend(dc.legend().x(300).y(20).itemHeight(13).itemWidth(50).gap(5).horizontal(1))
                      .brushOn(false)
+                     .title(function(d) { return 'Quantidade: ' + d.value; })
                      .compose(composeGraphs);
 
         compositeChart.render();
