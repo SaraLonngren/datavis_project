@@ -33,22 +33,72 @@
 
     let colorScale = d3.scaleOrdinal()
                     .domain(["0", "1", "2", "3"])
-                    .range(["#009933", "#3333ff", "#ff3399", "#ff0000"]);
+                    .range(["#009933", "#3333ff", "#FF8C00", "#ff0000"]);
 
+    // var legend = L.control({position: 'bottomright'});
 	// load data from a csv file
 	d3.csv("data/map_data/calls_2011_map_parte.csv").then(function (data) {
 
-   		data.forEach(function(d){
+        //Adicioando um controle de informação
+        // var info = L.control();
 
-                let circle = L.circle([d.latitude, d.longitude], 200, {color: colorScale(d.priority), weight: 2, fillColor: colorScale(d.priority), fillOpacity: 0.5
+        // function highlightFeature(e) {
+        //     var layer = e.target;
+        //     info.update(layer.feature.properties);
+        //  }
+
+        // info.onAdd = function (map) {
+        //     this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+        //     this.update();
+        //     return this._div;
+        // };
+
+        // method that we will use to update the control based on feature properties passed
+        // info.update = function (props) {
+        //     this._div.innerHTML = '<h4>Ocorrencias:</h4>' +  (props ?
+        //         '<b>' + props.category + '</b><br />' + props.priority + ' grau prioridade / mi<sup>2</sup>'
+        //         : 'Hover over a state');
+        // };
+
+        // info.addTo(map);
+
+       data.forEach(function(d){
+
+                let circle = L.circle([d.latitude, d.longitude], 100, {color: colorScale(d.priority), weight: 2, fillColor: colorScale(d.priority), fillOpacity: 0.5
                             }).addTo(map);
-                circle.bindPopup("<b>Categoria:</b> "+d.category + "<br><b> Prioridade:</b> "+d.priority + " <br><b>Mês:</b> "+d.month)
+                //circle.bindPopup("<b>Categoria:</b> "+d.category + "<br><b> Prioridade:</b> "+d.priority + " <br><b>Mês:</b> "+d.month)
+
+
             });
+
+       var legend = L.control({position: 'bottomright'});
+
+        legend.onAdd = function (map) {
+
+            var div = L.DomUtil.create('div', 'info legend'),
+                grades = [0,1,2,3],
+                labels = [];
+
+            // loop through our density intervals and generate a label with a colored square for each interval
+            for (var i = 0; i < grades.length; i++) {
+                div.innerHTML +=
+                    '<i style="background:' + colorScale(grades[i]) + '"></i> ' +
+                    grades[i] + '<br>';
+            }
+
+            return div;
+        };
+
+        legend.addTo(map);
         
       // Render the Charts
+     
 	  dc.renderAll();
+      // legend.addTo(map);
 
 	});
+
+
 	</script>
 	 <!-- Bootstrap javascript files -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
