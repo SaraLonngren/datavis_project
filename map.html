@@ -35,32 +35,8 @@
                     .domain(["0", "1", "2", "3"])
                     .range(["#009933", "#3333ff", "#FF8C00", "#ff0000"]);
 
-    // var legend = L.control({position: 'bottomright'});
 	// load data from a csv file
 	d3.csv("data/map_data/calls_2011_map_parte.csv").then(function (data) {
-
-        //Adicioando um controle de informação
-        // var info = L.control();
-
-        // function highlightFeature(e) {
-        //     var layer = e.target;
-        //     info.update(layer.feature.properties);
-        //  }
-
-        // info.onAdd = function (map) {
-        //     this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-        //     this.update();
-        //     return this._div;
-        // };
-
-        // method that we will use to update the control based on feature properties passed
-        // info.update = function (props) {
-        //     this._div.innerHTML = '<h4>Ocorrencias:</h4>' +  (props ?
-        //         '<b>' + props.category + '</b><br />' + props.priority + ' grau prioridade / mi<sup>2</sup>'
-        //         : 'Hover over a state');
-        // };
-
-        // info.addTo(map);
 
        data.forEach(function(d){
 
