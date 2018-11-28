@@ -6,6 +6,19 @@
   font-family: "Montserrat-Regular";
   src: url("../fonts/Montserrat-Regular.otf");
 }
+/*
+.material-icons{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.esquerda{
+  margin-left: auto;
+  margin-right: auto;
+}*/
+.bordas{
+  border-top: 0px !important;
+}
 
 .fonte{
   font-family:"Montserrat-Regular" !important;
