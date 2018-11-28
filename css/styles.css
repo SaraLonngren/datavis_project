@@ -1,6 +1,46 @@
+/*--------------------------------------------------------------
+  Font Face
+------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../fonts/Montserrat-Regular.otf");
+}
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("../fonts/Montserrat-Light.otf");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../fonts/Montserrat-Bold.otf");
+}
+
+@font-face {
+  font-family: "Montserrat-Black";
+  src: url("../fonts/Montserrat-Black.otf");
+}
+
+@font-face {
+  font-family: "Montserrat-Hairline";
+  src: url("../fonts/Montserrat-Hairline.ttf");
+}
+
+.fonte{
+  font-family:"Montserrat-Regular" !important;
+}
+
+.cinza{
+  color:#a9a9a9;
+}
+
 .background-cor{
 	background-color: #000080;
 }
+
+.back-select{
+  border: 1px solid #d3d3d3 !important;
+}
+
 .brand-logo{
 	margin-left: 25px;
 }
@@ -13,6 +53,7 @@
 
 #barchart {
       position: absolute;
+      display: center;
 }
 
 #linechartContainer {
@@ -60,3 +101,4 @@ select{
     margin-right: 8px;
     opacity: 0.7;
 }
+

@@ -14,18 +14,50 @@
     <!-- Custom styles for this template -->
 	<link rel="stylesheet" href="css/dc.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link href="css/materialize.min.css" rel="stylesheet">
     <script src="js/crossfilter.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="js/dc.min.js"></script>
+
 </head>
 <body>
-  <main role="main" class="container">
-    <h3> New Orleans </h3>
-    <div class='row'>
-        <div id='mapid'></div> 
-    </div>
 
-  </main>
+    <body>
+        <nav>
+            <div class="nav-wrapper background-cor">
+              <a href="#" class="brand-logo">NOED</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="inicio.html">Graficos de Barras</a></li>
+                <li><a href="inicio.html/linechartContainer">Graficos de Linhas</a></li>
+                <li><a href="inicio.html/histogramContainer">Histograma</a></li>
+                <li><a href="map.html">Mapa</a></li>
+              </ul>
+            </div>
+        </nav>
+
+        <div id="inicio" class="container">
+            <div class="main">
+                  <div>
+                    <div> 
+                        <h3 class="fonte"> Ocorrencias de Outubro </h3>
+                        <div class='row'>
+                            <div id='mapid'></div> 
+                        </div>
+                    </div>
+                    <p class="cinza">
+                        Fonte: City of New Orleans - Open Data - data.nola.gov - Outubro de 2018
+                    </p>
+                    <p class="fonte">
+                        Como pode-se observar em todos os anos o principal tipo de chamada de emergência foi de reclamação, infelizmente não há na descrição dos dados quais ocorrências estão atreladas a esse tipo de chamada.<br>
+                        As segundas e terceiras posições geralmente alternam entre acidente de trânsito e alarme de roubo. Por ser uma cidade grande, a mais populosa do estado de Luisiana, é de se esperar que esses tipos de ocorrências sejam comuns.<br>
+                        Em 2018 porém foi possível notar que as ligações de emergência do tipo 'Area Check' cresceram bastante, conseguindo ficar em segundo lugar.
+                    </p>
+                  </div>
+            </div>
+        </div>
+
+
   <script type="text/javascript">
 	
     let map = L.map('mapid').setView([30.028,-89.990], 11);
@@ -36,7 +68,7 @@
                     .range(["#009933", "#3333ff", "#FF8C00", "#ff0000"]);
 
 	// load data from a csv file
-	d3.csv("data/map_data/calls_2011_map_parte.csv").then(function (data) {
+	d3.csv("data/map_data/calls_2018_map_october.csv").then(function (data) {
 
        data.forEach(function(d){
 
