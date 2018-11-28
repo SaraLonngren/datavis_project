@@ -6,24 +6,6 @@
   font-family: "Montserrat-Regular";
   src: url("../fonts/Montserrat-Regular.otf");
 }
-@font-face {
-  font-family: "Montserrat-Light";
-  src: url("../fonts/Montserrat-Light.otf");
-}
-@font-face {
-  font-family: "Montserrat-Bold";
-  src: url("../fonts/Montserrat-Bold.otf");
-}
-
-@font-face {
-  font-family: "Montserrat-Black";
-  src: url("../fonts/Montserrat-Black.otf");
-}
-
-@font-face {
-  font-family: "Montserrat-Hairline";
-  src: url("../fonts/Montserrat-Hairline.ttf");
-}
 
 .fonte{
   font-family:"Montserrat-Regular" !important;
