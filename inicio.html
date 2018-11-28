@@ -35,6 +35,7 @@
 	  			  	<p class="fonte">
 				    	O Departamento de Polícia de Nova Orleans disponibiliza anualmente dados referentes aos chamados de emergência (911). Nestes datasets são informados os tipos de chamados, a prioridade deles, a data e hora do chamado e do término da ocorrência, a latitude e longitude dos chamados, entre outros. Por serem datasets com muitos atributos e com muitas ocorrências foi pensado em se fazer uma visualização em cima desses dados, para que dessa meneira, fosse capaz de inferir conclusões como: Qual parte da cidade ocorreu mais crimes, a duração média de cada emergência, os principais tipos de emergências e suas prioridades, etc. Conclusões como essas podem ajudar as autoridades a montar um plano de prevenção que tem como objetivo evitar ou amenizar as principais emergências do ano anterior, levando segurança e qualidade de vida para os cidadãos.
 				    </p>
+				    <h4>TOP 10 Categorias por ano</h4>
 				    <p>Selecione o ano:</p>
 				    <select class="back-select" id="interval"></select>
 
@@ -60,7 +61,7 @@
 					      <div class="card blue darken-4">
 					        <div class="card-content white-text">
 					          <!--<span class="card-title">Card Title</span>-->
-					          <i class="material-icons col m1">face</i>
+					          <i class="material-icons col m1">notifications_active</i>
 					          <p class="col m11">I am a very simple card. I am good at containing small bits of information.
 					          I am convenient because I require little markup to use effectively.</p>
 					        </div>
@@ -69,11 +70,12 @@
 					        </div>
 					      </div>
 					    </div>
-					  </div>
+					  </div>           
 				  </div>
 
 				  <!--Line chart começa aqui -->
 				  <div>
+				  	<h4>Ocorrências por ano</h4>
 				  	<figure>
 					  <div id="linechartContainer">
 					  	<div id="composite_chart"></div>
@@ -82,6 +84,17 @@
 					 <p class="cinza fonte">
 				    	Fonte: City of New Orleans - Open Data - data.nola.gov
 				    </p>
+				    	<div class="row">
+					    <div class="col s12 m12">
+					      <div class="card blue darken-4">
+					        <div class="card-content white-text">
+					          <i class="material-icons col m1">notifications_active</i>
+					          <p >Apesar de haver mudanças nítidas no mapa de quantidade de ocorrencias, nao houve nenhuma mudança política em New Orleans que pudesse ocasionar isso. O prefeito é Mitch Landrieu, o mesmo desde 2010.</p>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+
 					 <p class="fonte">
 				    	O gráfico mostra a quantidade de chamados ao longo de cada ano desde 2011 até 2018. Pode-se verificar que nos anos de 2011 e 2012 a quantidade de chamados foi um pouco maior do que nos outros anos durante todos os meses praticamente. É importante ressaltar que a polícia de Nova Orleans esteve sob investigação federal acusada de corrupção, uso de força excessiva, procuras ilegais e discriminação racial generalizada. Um acordo foi selado em 2012 pelo Departamento de Justiça e a Distrito Policial de Nova Orleans. O acordo inclui mais de 100 recomendações englobando praticamente todos os aspectos do departamento e foi responsável por uma grande reestruturação do Distrito. Talvez esses abusos policiais tenham sido uma das causas do maior número de chamadas de emergência nos anos de 2011 e 2012, e possívelmente nos anos anteriores <a href="https://edition.cnn.com/2012/07/24/justice/justice-department-new-orleans-police/index.html">Link</a>.  
 				    </p>
@@ -89,6 +102,7 @@
 
 				  <!--Histograma começa aqui-->
 				  <div>
+				  	<h4>Frequencia de tempo de cada ocorrência</h4>
 				  	<figure>
 					  <div id="histogramContainer">
 					    <p>Selecione o ano:</p>
