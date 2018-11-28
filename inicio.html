@@ -17,36 +17,40 @@
 
 	<body>
 		<nav>
-		    <div class="nav-wrapper background-cor">
+		    <div class="nav-wrapper background-cor fonte">
 		      <a href="#" class="brand-logo">NOED</a>
 		      <ul id="nav-mobile" class="right hide-on-med-and-down">
 		        <li><a href="#inicio">Inicio</a></li>
 		        <li><a href="#inicio">Graficos de Barras</a></li>
-		        <li><a href="#">Graficos Complexos</a></li>
+		        <li><a href="#linechartContainer">Graficos de Linhas</a></li>
+		        <li><a href="#histogramContainer">Histograma</a></li>
+		        <li><a href="map.html">Mapa</a></li>
 		      </ul>
 	  	</nav>
 
 	  	<div id="inicio" class="container">
-	  		<div class="main">
+	  		<div class="main fonte">
 	  			  <div>
 	  			  	<h3>NOED</h3>
-	  			  	<p>
+	  			  	<p class="fonte">
 				    	O Departamento de Polícia de Nova Orleans disponibiliza anualmente dados referentes aos chamados de emergência (911). Nestes datasets são informados os tipos de chamados, a prioridade deles, a data e hora do chamado e do término da ocorrência, a latitude e longitude dos chamados, entre outros. Por serem datasets com muitos atributos e com muitas ocorrências foi pensado em se fazer uma visualização em cima desses dados, para que dessa meneira, fosse capaz de inferir conclusões como: Qual parte da cidade ocorreu mais crimes, a duração média de cada emergência, os principais tipos de emergências e suas prioridades, etc. Conclusões como essas podem ajudar as autoridades a montar um plano de prevenção que tem como objetivo evitar ou amenizar as principais emergências do ano anterior, levando segurança e qualidade de vida para os cidadãos.
 				    </p>
 				    <p>Selecione o ano:</p>
-				    <select id="interval"></select>
+				    <select class="back-select" id="interval"></select>
 
 				    <p>Selecione o número de categorias:</p>
 				    <input type="number" id="categories" name="categories" value="10" min="3" max="40">
 
-				    <figure>
+
 				    <div id="barchartContainer">
 				      <div id="barchart"></div>  
 				    </div>
-				    </figure>
-				    <p>
-				    	Como pode-se observar em todos os anos o principal tipo de chamada de emergência foi de reclamação, infelizmente não há na descrição dos dados quais ocorrências estão atreladas a esse tipo de chamada.<br>
-				    	As segundas e terceiras posições geralmente alternam entre acidente de trânsito e alarme de roubo. Por ser uma cidade grande, a mais populosa do estado de Luisiana, é de se esperar que esses tipos de ocorrências sejam comuns.<br>
+				    <p class="cinza fonte">
+				    	Fonte: City of New Orleans - Open Data - data.nola.gov
+				    </p>
+				    <p class="fonte">
+				    	Como pode-se observar em todos os anos o principal tipo de chamada de emergência foi de <b>reclamação</b>, infelizmente não há na descrição dos dados quais ocorrências estão atreladas a esse tipo de chamada.<br>
+				    	As segundas e terceiras posições geralmente alternam entre <b>acidente de trânsito</b> e <b>alarme de roubo</b>. Por ser uma cidade grande, a mais populosa do estado de Luisiana, é de se esperar que esses tipos de ocorrências sejam comuns.<br>
 				    	Em 2018 porém foi possível notar que as ligações de emergência do tipo 'Area Check' cresceram bastante, conseguindo ficar em segundo lugar.
 				    </p>
 				  </div>
@@ -56,7 +60,10 @@
 					  	<div id="composite_chart"></div>
 					  </div>
 					 </figure>
-					 <p>
+					 <p class="cinza fonte">
+				    	Fonte: City of New Orleans - Open Data - data.nola.gov
+				    </p>
+					 <p class="fonte">
 				    	O gráfico mostra a quantidade de chamados ao longo de cada ano desde 2011 até 2018. Pode-se verificar que nos anos de 2011 e 2012 a quantidade de chamados foi um pouco maior do que nos outros anos durante todos os meses praticamente. É importante ressaltar que a polícia de Nova Orleans esteve sob investigação federal acusada de corrupção, uso de força excessiva, procuras ilegais e discriminação racial generalizada. Um acordo foi selado em 2012 pelo Departamento de Justiça e a Distrito Policial de Nova Orleans. O acordo inclui mais de 100 recomendações englobando praticamente todos os aspectos do departamento e foi responsável por uma grande reestruturação do Distrito. Talvez esses abusos policiais tenham sido uma das causas do maior número de chamadas de emergência nos anos de 2011 e 2012, e possívelmente nos anos anteriores <a href="https://edition.cnn.com/2012/07/24/justice/justice-department-new-orleans-police/index.html">Link</a>.  
 				    </p>
 				  </div>
@@ -68,8 +75,11 @@
 					    <div id="histogram"></div>
 					  </div>
 					 </figure>
-					 <p>
-				    	Pelo histograma nota-se que a grande parte das ocorrências das chamadas de emergência não chegaram a ter um minuto de duração, provavelmente essas eram chamadas de prioridade baixa e que não necessitaram da intervenção das autoridades. A partir dos 15 minutos de duração verifica-se que a duração das ocorrências vai diminuindo cada vez mais.  
+					 <p class="cinza fonte">
+				    	Fonte: City of New Orleans - Open Data - data.nola.gov
+				    </p>
+					 <p class="fonte">
+				    	Pelo histograma nota-se que a grande parte das ocorrências das chamadas de emergência não chegaram a ter um minuto de duração, provavelmente essas eram chamadas de prioridade baixa e que não necessitaram da intervenção ativa das autoridades. A partir dos 15 minutos de duração verifica-se que a duração das ocorrências vai diminuindo cada vez mais.  
 				    </p>
 				 </div>
 	  		</div>
