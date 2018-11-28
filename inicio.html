@@ -1,0 +1,140 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+	 	<title>NOED - New Orleans Emergency DataVis</title>
+	 	<!--Import Google Icon Font-->
+      	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 	
+	 	<!--Stylesheet-->
+	    <link rel="stylesheet" href="css/dc.min.css">
+	    <link rel="stylesheet" href="css/styles.css">
+	 	<link href="css/materialize.min.css" rel="stylesheet">
+	 	<link href="css/styles.css" rel="stylesheet">
+	 	<!-- Scripts -->
+
+	</head>
+
+	<body>
+		<nav>
+		    <div class="nav-wrapper background-cor fonte">
+		      <a href="#" class="brand-logo">NOED</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="#inicio">Inicio</a></li>
+		        <li><a href="#inicio">Graficos de Barras</a></li>
+		        <li><a href="#linechartContainer">Graficos de Linhas</a></li>
+		        <li><a href="#histogramContainer">Histograma</a></li>
+		        <li><a href="map.html">Mapa</a></li>
+		      </ul>
+	  	</nav>
+
+	  	<div id="inicio" class="container">
+	  		<div class="main fonte">
+	  			  <div>
+	  			  	<h3>NOED</h3>
+	  			  	<p class="fonte">
+				    	O Departamento de Polícia de Nova Orleans disponibiliza anualmente dados referentes aos chamados de emergência (911). Nestes datasets são informados os tipos de chamados, a prioridade deles, a data e hora do chamado e do término da ocorrência, a latitude e longitude dos chamados, entre outros. Por serem datasets com muitos atributos e com muitas ocorrências foi pensado em se fazer uma visualização em cima desses dados, para que dessa meneira, fosse capaz de inferir conclusões como: Qual parte da cidade ocorreu mais crimes, a duração média de cada emergência, os principais tipos de emergências e suas prioridades, etc. Conclusões como essas podem ajudar as autoridades a montar um plano de prevenção que tem como objetivo evitar ou amenizar as principais emergências do ano anterior, levando segurança e qualidade de vida para os cidadãos.
+				    </p>
+				    <p>Selecione o ano:</p>
+				    <select class="back-select" id="interval"></select>
+
+				    <p>Selecione o número de categorias:</p>
+				    <input type="number" id="categories" name="categories" value="10" min="3" max="40">
+
+
+				    <div id="barchartContainer">
+				      <div id="barchart"></div>  
+				    </div>
+				    <p class="cinza fonte">
+				    	Fonte: City of New Orleans - Open Data - data.nola.gov
+				    </p>
+				    <p class="fonte">
+				    	Como pode-se observar em todos os anos o principal tipo de chamada de emergência foi de <b>reclamação</b>, infelizmente não há na descrição dos dados quais ocorrências estão atreladas a esse tipo de chamada.<br>
+				    	As segundas e terceiras posições geralmente alternam entre <b>acidente de trânsito</b> e <b>alarme de roubo</b>. Por ser uma cidade grande, a mais populosa do estado de Luisiana, é de se esperar que esses tipos de ocorrências sejam comuns.<br>
+				    	Em 2018 porém foi possível notar que as ligações de emergência do tipo 'Area Check' cresceram bastante, conseguindo ficar em segundo lugar.
+				    </p>
+					
+					<!--Adicionando o card com detalhes a mais -->
+				      <div class="row">
+					    <div class="col s12 m12">
+					      <div class="card blue darken-4">
+					        <div class="card-content white-text">
+					          <!--<span class="card-title">Card Title</span>-->
+					          <i class="material-icons col m1">face</i>
+					          <p class="col m11">I am a very simple card. I am good at containing small bits of information.
+					          I am convenient because I require little markup to use effectively.</p>
+					        </div>
+					        <div class="card-action bordas">
+					          <a href="#">This is a link</a>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+				  </div>
+
+				  <!--Line chart começa aqui -->
+				  <div>
+				  	<figure>
+					  <div id="linechartContainer">
+					  	<div id="composite_chart"></div>
+					  </div>
+					 </figure>
+					 <p class="cinza fonte">
+				    	Fonte: City of New Orleans - Open Data - data.nola.gov
+				    </p>
+					 <p class="fonte">
+				    	O gráfico mostra a quantidade de chamados ao longo de cada ano desde 2011 até 2018. Pode-se verificar que nos anos de 2011 e 2012 a quantidade de chamados foi um pouco maior do que nos outros anos durante todos os meses praticamente. É importante ressaltar que a polícia de Nova Orleans esteve sob investigação federal acusada de corrupção, uso de força excessiva, procuras ilegais e discriminação racial generalizada. Um acordo foi selado em 2012 pelo Departamento de Justiça e a Distrito Policial de Nova Orleans. O acordo inclui mais de 100 recomendações englobando praticamente todos os aspectos do departamento e foi responsável por uma grande reestruturação do Distrito. Talvez esses abusos policiais tenham sido uma das causas do maior número de chamadas de emergência nos anos de 2011 e 2012, e possívelmente nos anos anteriores <a href="https://edition.cnn.com/2012/07/24/justice/justice-department-new-orleans-police/index.html">Link</a>.  
+				    </p>
+				  </div>
+
+				  <!--Histograma começa aqui-->
+				  <div>
+				  	<figure>
+					  <div id="histogramContainer">
+					    <p>Selecione o ano:</p>
+					    <select id="dropbox"></select>
+					    <div id="histogram"></div>
+					  </div>
+					 </figure>
+					 <p class="cinza fonte">
+				    	Fonte: City of New Orleans - Open Data - data.nola.gov
+				    </p>
+					 <p class="fonte">
+				    	Pelo histograma nota-se que a grande parte das ocorrências das chamadas de emergência não chegaram a ter um minuto de duração, provavelmente essas eram chamadas de prioridade baixa e que não necessitaram da intervenção ativa das autoridades. A partir dos 15 minutos de duração verifica-se que a duração das ocorrências vai diminuindo cada vez mais.  
+				    </p>
+				 </div>
+	  		</div>
+	  	</div>
+
+		<footer class="page-footer background-cor">
+		    <div class="container">
+		      <div class="row">
+		        <div>
+		          <h5 class="white-text">Desenvolvido por:</h5>
+		          <p class="grey-text text-lighten-4">Antonio Cláudio Guimarães - 374917  | Ariel da Silva Barros - 374719  |  Sara Aguiar Lonngren Sampaio - 371867 </p>
+		        </div>
+		      </div>
+		    </div>
+		 </footer>
+
+		 <!-- Script-->
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script src="js/crossfilter.min.js"></script>
+	    <script src="https://d3js.org/d3.v5.min.js"></script>
+	    <script src="js/dc.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.js"></script>
+	    <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+	    <script src="js/bar_chart.js"></script>
+	    <script src="js/composite_chart.js"></script>
+	    <script src="js/histogram.js"></script>
+
+		<!--  <script type="text/javascript">
+		 	var years = ['2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011']
+		 	
+		       d3.select('#interval').selectAll('option')
+          			.data(years)
+        		.enter().append('option')
+          			.text(function(d) { return d; });
+          </script> -->
+	</body>
+</html>
